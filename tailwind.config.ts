@@ -74,6 +74,17 @@ const config = {
       },
     },
   },
+  corePlugins: {
+    preflight: false,
+    textOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    filter: false
+  },
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
+  important: true,
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
 
