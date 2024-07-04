@@ -1,0 +1,11 @@
+@layer base {
+  :root {
+    --base-font-size: clamp(16px, 0.95rem + 0.25vw, 20px);
+    --p-font-size: var(--base-font-size);
+    --h1-font-size: calc(var(--base-font-size) * 2);
+    --h2-font-size: calc(var(--base-font-size) * 1.75);
+    --h3-font-size: calc(var(--base-font-size) * 1.5);
+    --h4-font-size: calc(var(--base-font-size) * 1.25);
+    --h5-font-size: calc(var(--base-font-size) * 1.125);
+  }
+}

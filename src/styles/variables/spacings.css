@@ -1,0 +1,9 @@
+@layer base {
+  :root {
+    --spacing-unit: calc(var(--base-font-size) * 1.5);
+    --spacing-unit-tiny: calc(var(--spacing-unit) * 0.25);
+    --spacing-unit-small: calc(var(--spacing-unit) * 0.5);
+    --spacing-unit-large: calc(var(--spacing-unit) * 1.5);
+    --spacing-unit-huge: calc(var(--spacing-unit) * 2);
+  }
+}

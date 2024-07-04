@@ -1,0 +1,104 @@
+body {
+  font-size: var(--base-font-size, 16px);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  font-size: var(--p-font-size, var(--base-font-size, 16px));
+
+	&:has(+ *) {
+  	margin-bottom: var(--spacing-unit, 24px);
+	}
+}
+
+h1 {
+  font-size: var(--h1-font-size, 36px);
+}
+
+h2 {
+  font-size: var(--h2-font-size, 28px);
+}
+
+h3 {
+  font-size: var(--h3-font-size, 24px);
+}
+
+h4 {
+  font-size: var(--h4-font-size, 20px);
+}
+
+h5 {
+  font-size: var(--h5-font-size, 18px);
+}
+
+h6 {
+  font-size: var(--h6-font-size, 16px);
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+	font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}

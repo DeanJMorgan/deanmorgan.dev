@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
+/**
+ * 1. Ensure tables fill up as much space as possible.
+ * 2. Remove default table border spacing.
+ * 3. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+ * 4. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+ */
+
+table {
+  width: 100%; /* [1] */
+  border-collapse: collapse; /* [2] */
+  border-spacing: 0; /* [2] */
+	text-indent: 0; /* [3] */
+  border-color: inherit; /* [4] */
+}

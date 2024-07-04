@@ -1,0 +1,7 @@
+@layer base {
+  :root {
+    /* Global Values */
+    --radius: 0.5rem;
+    --animation: 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,19 @@
+.as-h1 {
+  font-size: var(--h1-font-size);
+}
+
+.as-h2 {
+  font-size: var(--h2-font-size);
+}
+
+.as-h3 {
+  font-size: var(--h3-font-size);
+}
+
+.as-h4 {
+  font-size: var(--h4-font-size);
+}
+
+.as-h5 {
+  font-size: var(--h5-font-size);
+}
