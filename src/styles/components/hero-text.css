@@ -1,0 +1,22 @@
+.hero-text {
+  margin-bottom: var(--spacing-unit);
+}
+
+.hero-text__primary {
+  font-size: clamp(1rem, 30vw, 512px);
+  line-height: clamp(1rem, 30vw, 512px);
+  font-weight: 900;
+  text-align: center;
+  color: var(--foreground);
+  text-shadow: 3px 3px 0 #fff, -3px 3px 0 #fff, -3px -3px 0 #fff,
+    3px -3px 0 #fff;
+  z-index: -1;
+}
+
+.hero-text__secondary {
+  color: var(--foreground);
+  font-size: clamp(var(--h4-font-size), 1.05rem + 2.25vw ,var(--h1-font-size));
+  font-weight: 600;
+  text-align: right;
+  text-wrap: pretty;
+}
