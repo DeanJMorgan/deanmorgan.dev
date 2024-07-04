@@ -1,0 +1,23 @@
+.footer {
+  --background: var(--vibrant-blue);
+  --foreground: var(--pure-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: var(--spacing-unit);
+  padding: var(--spacing-unit) var(--spacing-unit-large);
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.footer__signature {
+  flex: 1 0;
+  min-width: fit-content;
+  text-wrap: pretty;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+}

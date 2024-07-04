@@ -1,0 +1,20 @@
+.icon-links {
+  display: flex;
+  gap: 24px;
+
+  .icon-links__icon {
+    width: 48px;
+
+    svg {
+      fill: var(--pure-white);
+      transition: all var(--animation);
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+        transform: translateY(-5px) translateX(3px) rotate(10deg);
+      }
+    }
+  }
+}
