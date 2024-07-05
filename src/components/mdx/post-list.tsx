@@ -15,7 +15,10 @@ export default async function PostList() {
     <div className="max-w-prose">
       <ul>
         {posts
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .sort((a, b) => {
+          if (!b || !a) return 0; // Or handle nulls in some other way
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        })
         .filter(post => post?.slug !== undefined).map((post) => (
           <li key={post?.slug}>
             <Link href={`/blog/${post?.slug ?? ""}`}>{post?.title}</Link> - {formatDate(post?.date ?? "")}
