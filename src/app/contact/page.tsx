@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -31,6 +32,11 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null,
+  );
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,11 +46,39 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Handle form submission
-    alert("Inquiry sent successfully. Dean will be in touch soon.");
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual key
+          name: values.name,
+          email: values.email,
+          message: values.message,
+          subject: `New Contact Form Submission from ${values.name}`,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        form.reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -84,7 +118,7 @@ export default function ContactPage() {
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Dean Morgan"
+                            placeholder="Your full name"
                             className="rounded-none border-t-0 border-x-0 border-b-2 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary"
                             {...field}
                           />
@@ -103,7 +137,7 @@ export default function ContactPage() {
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="hello@deanmorgan.dev"
+                            placeholder="your.email@example.com"
                             className="rounded-none border-t-0 border-x-0 border-b-2 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary"
                             {...field}
                           />
@@ -123,7 +157,7 @@ export default function ContactPage() {
                         <FormControl>
                           <Textarea
                             placeholder="Tell me about your requirements..."
-                            className="rounded-none border-t-0 border-x-0 border-b-2 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary min-h-[120px]"
+                            className="rounded-none border-t-0 border-x-0 border-b-2 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary min-h-30"
                             {...field}
                           />
                         </FormControl>
@@ -133,10 +167,30 @@ export default function ContactPage() {
                   />
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full rounded-none h-14 text-lg font-bold"
                   >
-                    Send Inquiry
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </Button>
+                  {submitStatus === "success" && (
+                    <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 text-sm">
+                      <p className="font-semibold">
+                        Message sent successfully!
+                      </p>
+                      <p>
+                        Thank you for reaching out. I&apos;ll get back to you
+                        soon.
+                      </p>
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 text-sm">
+                      <p className="font-semibold">Something went wrong.</p>
+                      <p>
+                        Please try again or contact me directly via LinkedIn.
+                      </p>
+                    </div>
+                  )}
                 </form>
               </Form>
 
