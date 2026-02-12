@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { Button } from "@/components/ui/button";
 
@@ -40,7 +41,7 @@ export default function Error({
               size="lg"
               className="rounded-none px-12"
             >
-              <a href="/">Go Home</a>
+              <Link href="/">Go Home</Link>
             </Button>
           </div>
         </div>

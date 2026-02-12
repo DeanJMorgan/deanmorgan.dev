@@ -2,12 +2,11 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { HowIHelp } from "../components/sections/how-i-help";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Mocking framer-motion to avoid issues in test environment
 vi.mock("framer-motion", () => ({
   motion: {
-    div: ({ children, whileInView, viewport, initial, animate, transition, ...props }: any) => (
-      <div {...props}>{children}</div>
-    ),
+    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
     h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
     h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
     p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
