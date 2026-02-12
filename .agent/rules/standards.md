@@ -33,6 +33,7 @@ Always follow these rules when working on this project.
 - **Workflows**:
   - [Add Tech Icon](/.agent/workflows/add-tech-icon.md)
   - [Add UI Component](/.agent/workflows/add-ui-component.md)
+  - [Commit Work](/.agent/workflows/commit.md)
   - [Create Blog Post](/.agent/workflows/create-blog-post.md)
   - [Pull Request Standards](/.agent/workflows/pull-request.md)
   - [Run Dev Server](/.agent/workflows/run-dev-server.md)

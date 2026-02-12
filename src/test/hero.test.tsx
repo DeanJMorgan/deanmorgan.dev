@@ -12,9 +12,11 @@ vi.mock("framer-motion", () => ({
 }));
 
 describe("Hero Component", () => {
-  it("renders the high-impact headline", () => {
+  it("renders the high-impact headline and primary CTAs", () => {
     render(<Hero />);
     expect(screen.getByText(/Engineering High-Performance/i)).toBeDefined();
     expect(screen.getByText(/eCommerce/i)).toBeDefined();
+    expect(screen.getByRole("link", { name: /Get in touch/i })).toBeDefined();
+    expect(screen.getByRole("link", { name: /About my approach/i })).toBeDefined();
   });
 });

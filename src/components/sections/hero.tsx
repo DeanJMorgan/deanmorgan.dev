@@ -27,8 +27,9 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 1 }}
             className="max-w-2xl text-xl text-muted-foreground sm:text-2xl font-mono leading-relaxed"
           >
-            Forensic performance optimisation and custom technical architecture
-            for enterprise-level digital commerce.
+            Bespoke technical leadership and high-performance engineering
+            tailored for modern brands. I help businesses scale through
+            efficient architecture and data-driven strategy.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -39,9 +40,9 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="rounded-none h-14 px-8 text-lg font-semibold"
+              className="rounded-none h-14 px-8 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 border-none"
             >
-              <Link href="/contact">Inquire for Consultation</Link>
+              <Link href="/contact">Get in touch</Link>
             </Button>
             <Button
               asChild
@@ -49,7 +50,7 @@ export function Hero() {
               size="lg"
               className="rounded-none h-14 px-8 text-lg font-semibold"
             >
-              <Link href="/about">View Expertise</Link>
+              <Link href="/about">About my approach</Link>
             </Button>
           </motion.div>
         </motion.div>

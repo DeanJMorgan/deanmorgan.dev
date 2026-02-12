@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/container";
 import { Timeline } from "@/components/sections/timeline";
 import { ClientList } from "@/components/sections/client-list";
+import { HowIHelp } from "@/components/sections/how-i-help";
+import { CallToAction } from "@/components/sections/cta";
 
 export default function AboutPage() {
   return (
@@ -60,7 +62,9 @@ export default function AboutPage() {
           </Container>
         </section>
         <ClientList />
+        <HowIHelp />
         <Timeline />
+        <CallToAction />
       </main>
       <Footer />
     </div>

@@ -34,7 +34,7 @@ const timeline = [
     role: "Frontend Developer",
     company: "Flavour Warehouse",
     description:
-      "Lead Developer on the B2B 'Batch Ordering System' rebuild. Merged standalone sites into a unified multisite system and introduced branch-based git methodologies.",
+      "Lead Developer on a B2B 'Batch Ordering System', designed to streamline the ordering process for wholesale clients resulting in increased conversions whilst reducing time on site.",
   },
   {
     year: "Feb 2019 — Jun 2020",
